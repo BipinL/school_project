@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_connect/http/src/utils/utils.dart';
+import 'package:school_project/view/attendance.dart';
+import 'package:school_project/view/feedetails.dart';
 import 'package:school_project/view/student_details.dart';
 
 void main() {
@@ -19,7 +21,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const StudentDetailsView(),
+      home: const FeeDetailsVeiw(),
     );
   }
 }
