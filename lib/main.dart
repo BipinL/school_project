@@ -4,6 +4,7 @@ import 'package:get/get_connect/http/src/utils/utils.dart';
 import 'package:school_project/view/attendance.dart';
 import 'package:school_project/view/feedetails.dart';
 import 'package:school_project/view/student_details.dart';
+import 'package:school_project/view/student_home_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -21,7 +22,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const FeeDetailsVeiw(),
+      home: const StudentHomePageView(),
     );
   }
 }
