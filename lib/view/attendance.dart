@@ -12,36 +12,36 @@ class AttendenceView extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            Padding(
-              padding: const EdgeInsets.fromLTRB(30, 35, 20, 20),
-              child: Row(
-                children: [
-                  Icon(
-                    Icons.arrow_back,
-                    color: AppColor.ksecondary,
-                    size: 30,
-                  ),
-                  Center(
-                    child: Padding(
-                      padding: EdgeInsets.fromLTRB(80, 0, 0, 0),
-                      child: Column(
-                        children: [
-                          Text(
-                            "Attendance",
-                            style: TextStyle(
-                                fontSize: 25, color: AppColor.ksecondary),
-                          ),
-                          Text(
-                            "2023-10",
-                            style: TextStyle(
-                                fontSize: 25, color: AppColor.ksecondary),
-                          )
-                        ],
-                      ),
+            const SizedBox(
+              height: 15,
+            ),
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Icon(
+                  Icons.arrow_back,
+                  color: AppColor.ktertiary,
+                ),
+                Column(
+                  children: [
+                    Text(
+                      "Attendace",
+                      style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.w500,
+                          color: AppColor.ksecondary),
                     ),
-                  ),
-                ],
-              ),
+                    Text(
+                      "2023-12",
+                      style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.w500,
+                          color: AppColor.ksecondary),
+                    )
+                  ],
+                )
+              ],
             )
           ],
         ),
