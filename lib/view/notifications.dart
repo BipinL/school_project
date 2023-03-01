@@ -17,7 +17,7 @@ class NotificationView extends StatelessWidget {
         child: Column(
           children: [
             Padding(
-              padding: const EdgeInsets.all(20.0),
+              padding: const EdgeInsets.all(25.0),
               child: Row(
                 children: [
                   Icon(
