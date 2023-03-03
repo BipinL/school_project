@@ -1,11 +1,7 @@
-import 'dart:html';
 import 'dart:io';
 
 import 'package:file_picker/file_picker.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 import 'package:school_project/util/appcolor.dart';
@@ -18,8 +14,9 @@ class ApplyLeaveView extends StatefulWidget {
 }
 
 class _ApplyLeaveViewState extends State<ApplyLeaveView> {
-  File? pdffile;
   TextEditingController datecontroller = TextEditingController();
+  File? pdffile;
+
   @override
   void initState() {
     super.initState();
