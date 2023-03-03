@@ -1,9 +1,11 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
 import 'package:school_project/util/appcolor.dart';
+import 'package:school_project/view/apply_leave.dart';
+import 'package:school_project/view/attendance.dart';
+import 'package:school_project/view/feedetails.dart';
+import 'package:school_project/view/notifications.dart';
+import 'package:school_project/view/student_details.dart';
 
 class StudentHomePageView extends StatelessWidget {
   const StudentHomePageView({super.key});
@@ -25,38 +27,48 @@ class StudentHomePageView extends StatelessWidget {
                   color: AppColor.ksecondary,
                   child: Row(
                     children: [
-                      const Expanded(
-                        child: CircleAvatar(
-                          radius: 35,
-                          backgroundImage: AssetImage("images/profile.webp"),
+                      Expanded(
+                        child: InkWell(
+                          onTap: () {
+                            Get.to(() => StudentDetailsView());
+                          },
+                          child: const CircleAvatar(
+                            radius: 35,
+                            backgroundImage: AssetImage("images/profile.webp"),
+                          ),
                         ),
                       ),
                       Padding(
                         padding: const EdgeInsets.fromLTRB(0, 20, 0, 0),
                         child: Expanded(
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                "Hari Prasad Limbu",
-                                style: TextStyle(
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.bold,
-                                    color: AppColor.kprimary),
-                              ),
-                              const SizedBox(
-                                height: 5,
-                              ),
-                              Text("Roll number:",
-                                  style: TextStyle(color: AppColor.kprimary)),
-                              const SizedBox(
-                                height: 5,
-                              ),
-                              Text(
-                                "PUR076BEI008",
-                                style: TextStyle(color: AppColor.kprimary),
-                              )
-                            ],
+                          child: InkWell(
+                            onTap: () {
+                              Get.to(() => StudentDetailsView());
+                            },
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  "Hari Prasad Limbu",
+                                  style: TextStyle(
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.bold,
+                                      color: AppColor.kprimary),
+                                ),
+                                const SizedBox(
+                                  height: 5,
+                                ),
+                                Text("Roll number:",
+                                    style: TextStyle(color: AppColor.kprimary)),
+                                const SizedBox(
+                                  height: 5,
+                                ),
+                                Text(
+                                  "PUR076BEI008",
+                                  style: TextStyle(color: AppColor.kprimary),
+                                )
+                              ],
+                            ),
                           ),
                         ),
                       ),
@@ -72,7 +84,9 @@ class StudentHomePageView extends StatelessWidget {
                         padding: const EdgeInsets.fromLTRB(0, 0, 10, 40),
                         child: IconButton(
                             color: AppColor.ktertiary,
-                            onPressed: () {},
+                            onPressed: () {
+                              Get.to(() => NotificationView());
+                            },
                             icon: const Icon(Icons.notifications)),
                       )
                     ],
@@ -87,21 +101,31 @@ class StudentHomePageView extends StatelessWidget {
               children: [
                 Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: Container(
-                    height: 110,
-                    width: 90,
-                    child: Column(
-                      children: [
-                        Container(
-                            height: 80,
-                            color: AppColor.ksecondary,
-                            child: Image.asset("images/attendance.png")),
-                        const Text(
-                          "Attendace",
-                          style: TextStyle(
-                              fontSize: 16, fontWeight: FontWeight.w500),
-                        )
-                      ],
+                  child: InkWell(
+                    onTap: () {
+                      Get.to(() => AttendenceView());
+                    },
+                    child: Container(
+                      height: 110,
+                      width: 90,
+                      child: Column(
+                        children: [
+                          Container(
+                              height: 80,
+                              color: AppColor.ksecondary,
+                              child: Image.asset("images/attendance.png")),
+                          InkWell(
+                            onTap: () {
+                              Get.to(() => AttendenceView());
+                            },
+                            child: const Text(
+                              "Attendace",
+                              style: TextStyle(
+                                  fontSize: 16, fontWeight: FontWeight.w500),
+                            ),
+                          )
+                        ],
+                      ),
                     ),
                   ),
                 ),
@@ -152,10 +176,15 @@ class StudentHomePageView extends StatelessWidget {
                     width: 90,
                     child: Column(
                       children: [
-                        Container(
-                            height: 80,
-                            color: AppColor.ksecondary,
-                            child: Image.asset("images/feedetail.png")),
+                        InkWell(
+                          onTap: () {
+                            Get.to(() => FeeDetailsVeiw());
+                          },
+                          child: Container(
+                              height: 80,
+                              color: AppColor.ksecondary,
+                              child: Image.asset("images/feedetail.png")),
+                        ),
                         const Text(
                           "Fee Details",
                           style: TextStyle(
@@ -172,10 +201,15 @@ class StudentHomePageView extends StatelessWidget {
                     width: 90,
                     child: Column(
                       children: [
-                        Container(
-                            height: 80,
-                            color: AppColor.ksecondary,
-                            child: Image.asset("images/leave.png")),
+                        InkWell(
+                          onTap: () {
+                            Get.to(() => ApplyLeaveView());
+                          },
+                          child: Container(
+                              height: 80,
+                              color: AppColor.ksecondary,
+                              child: Image.asset("images/leave.png")),
+                        ),
                         const Text(
                           "Leave",
                           style: TextStyle(

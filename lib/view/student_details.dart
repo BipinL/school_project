@@ -1,7 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
 import 'package:school_project/util/appcolor.dart';
 
@@ -17,62 +14,63 @@ class StudentDetailsView extends StatelessWidget {
           child: Column(
             children: [
               Padding(
-                padding: EdgeInsets.fromLTRB(12, 40, 12, 40),
+                padding: const EdgeInsets.fromLTRB(12, 20, 12, 20),
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(15),
                   child: Container(
-                    height: 130,
+                    height: 110,
                     color: AppColor.ksecondary,
                     child: Row(
                       children: [
-                        const Padding(
-                          padding: const EdgeInsets.all(8.0),
+                        const Expanded(
                           child: CircleAvatar(
-                            radius: 40,
+                            radius: 35,
                             backgroundImage: AssetImage("images/profile.webp"),
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsets.fromLTRB(8, 28, 8, 0),
-                          child: Column(
-                            children: [
-                              Text(
-                                "Mr.Alex jhon",
-                                style: TextStyle(
-                                    fontSize: 20,
-                                    fontWeight: FontWeight.bold,
-                                    color: AppColor.kprimary),
-                              ),
-                              SizedBox(
-                                height: 5,
-                              ),
-                              Text("Roll number:",
-                                  style: TextStyle(color: AppColor.kprimary)),
-                              SizedBox(
-                                height: 5,
-                              ),
-                              Text(
-                                "PUR076BEI008",
-                                style: TextStyle(color: AppColor.kprimary),
-                              )
-                            ],
+                          padding: const EdgeInsets.fromLTRB(0, 20, 0, 0),
+                          child: Expanded(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  "Hari Prasad Limbu",
+                                  style: TextStyle(
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.bold,
+                                      color: AppColor.kprimary),
+                                ),
+                                const SizedBox(
+                                  height: 5,
+                                ),
+                                Text("Roll number:",
+                                    style: TextStyle(color: AppColor.kprimary)),
+                                const SizedBox(
+                                  height: 5,
+                                ),
+                                Text(
+                                  "PUR076BEI008",
+                                  style: TextStyle(color: AppColor.kprimary),
+                                )
+                              ],
+                            ),
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsets.fromLTRB(5, 0, 5, 30),
-                          child: Icon(
-                            Icons.arrow_downward_sharp,
-                            color: AppColor.ktertiary,
-                            size: 40,
-                          ),
+                          padding: const EdgeInsets.fromLTRB(0, 0, 0, 40),
+                          child: IconButton(
+                              iconSize: 30,
+                              color: AppColor.ktertiary,
+                              onPressed: () {},
+                              icon: const Icon(Icons.expand_more_outlined)),
                         ),
                         Padding(
-                          padding: const EdgeInsets.fromLTRB(5, 0, 5, 30),
-                          child: Icon(
-                            Icons.settings,
-                            color: AppColor.ktertiary,
-                            size: 40,
-                          ),
+                          padding: const EdgeInsets.fromLTRB(0, 0, 10, 40),
+                          child: IconButton(
+                              color: AppColor.ktertiary,
+                              onPressed: () {},
+                              icon: const Icon(Icons.notifications)),
                         )
                       ],
                     ),

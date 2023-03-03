@@ -4,6 +4,7 @@ import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
 import 'package:school_project/util/appcolor.dart';
+import 'package:school_project/view/student_home_page.dart';
 
 class NotificationView extends StatelessWidget {
   const NotificationView({super.key});
@@ -20,12 +21,16 @@ class NotificationView extends StatelessWidget {
               padding: const EdgeInsets.all(25.0),
               child: Row(
                 children: [
-                  Icon(
-                    Icons.arrow_back,
-                    color: AppColor.ktertiary,
-                  ),
+                  IconButton(
+                      onPressed: () {
+                        Get.off(() => StudentHomePageView());
+                      },
+                      icon: Icon(
+                        Icons.arrow_back,
+                        color: AppColor.ktertiary,
+                      )),
                   Padding(
-                    padding: const EdgeInsets.fromLTRB(90, 0, 0, 0),
+                    padding: const EdgeInsets.fromLTRB(70, 0, 0, 0),
                     child: Text(
                       "Notifications",
                       style: TextStyle(

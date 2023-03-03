@@ -1,11 +1,7 @@
-import 'dart:math';
-
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
 import 'package:school_project/util/appcolor.dart';
+import 'package:school_project/view/student_home_page.dart';
 
 class FeeDetailsVeiw extends StatelessWidget {
   const FeeDetailsVeiw({super.key});
@@ -23,11 +19,15 @@ class FeeDetailsVeiw extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  Icon(
-                    Icons.arrow_back,
-                    color: AppColor.ktertiary,
-                    size: 30,
-                  ),
+                  IconButton(
+                      onPressed: () {
+                        Get.off(() => StudentHomePageView());
+                      },
+                      icon: Icon(
+                        Icons.arrow_back,
+                        color: AppColor.ktertiary,
+                        size: 30,
+                      )),
                   Padding(
                     padding: const EdgeInsets.fromLTRB(50, 0, 0, 0),
                     child: Text(

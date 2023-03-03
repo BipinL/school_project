@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 import 'package:school_project/util/appcolor.dart';
+import 'package:school_project/view/student_home_page.dart';
 
 class ApplyLeaveView extends StatefulWidget {
   const ApplyLeaveView({super.key});
@@ -35,14 +36,16 @@ class _ApplyLeaveViewState extends State<ApplyLeaveView> {
               child: Row(
                 children: [
                   IconButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Get.off(() => StudentHomePageView());
+                    },
                     icon: Icon(
                       Icons.arrow_back,
                       color: AppColor.ktertiary,
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.fromLTRB(90, 0, 0, 0),
+                    padding: const EdgeInsets.fromLTRB(70, 0, 0, 0),
                     child: Text(
                       "Apply Leave",
                       style: TextStyle(
