@@ -1,3 +1,7 @@
+import 'dart:html';
+import 'dart:io';
+
+import 'package:file_picker/file_picker.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
@@ -14,6 +18,7 @@ class ApplyLeaveView extends StatefulWidget {
 }
 
 class _ApplyLeaveViewState extends State<ApplyLeaveView> {
+  File? pdffile;
   TextEditingController datecontroller = TextEditingController();
   @override
   void initState() {
@@ -32,9 +37,12 @@ class _ApplyLeaveViewState extends State<ApplyLeaveView> {
               padding: const EdgeInsets.all(25),
               child: Row(
                 children: [
-                  Icon(
-                    Icons.arrow_back,
-                    color: AppColor.ktertiary,
+                  IconButton(
+                    onPressed: () {},
+                    icon: Icon(
+                      Icons.arrow_back,
+                      color: AppColor.ktertiary,
+                    ),
                   ),
                   Padding(
                     padding: const EdgeInsets.fromLTRB(90, 0, 0, 0),
@@ -110,9 +118,52 @@ class _ApplyLeaveViewState extends State<ApplyLeaveView> {
                         height: 15,
                       ),
                       TextFormField(
+                        maxLines: 10,
                         decoration: InputDecoration(
-                            border: OutlineInputBorder(), helperMaxLines: 10),
-                        cursorHeight: 50,
+                            border: OutlineInputBorder(),
+                            hintText: "Describe your reason..........."),
+                      ),
+                      const SizedBox(
+                        height: 15,
+                      ),
+                      Row(
+                        children: [
+                          IconButton(
+                              onPressed: () async {
+                                final result = await FilePicker.platform
+                                    .pickFiles(
+                                        type: FileType.custom,
+                                        allowedExtensions: [
+                                      'pdf',
+                                      'doc',
+                                    ]);
+                                if (result != null) {
+                                  final path = result.files.single.path!;
+                                  setState(() {
+                                    pdffile = File(path);
+                                  });
+                                }
+                              },
+                              icon: Icon(Icons.attach_file)),
+                          const Text(
+                            "Attach File",
+                            style: TextStyle(
+                                fontSize: 16, fontWeight: FontWeight.w500),
+                          )
+                        ],
+                      ),
+                      const SizedBox(
+                        height: 15,
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          MaterialButton(
+                            color: AppColor.ktertiary,
+                            onPressed: () {},
+                            child: const Text("Submit"),
+                          )
+                        ],
                       )
                     ],
                   ),
